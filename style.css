@@ -1,0 +1,245 @@
+:root {
+  --nav-bg: #ffffff;
+  --text-primary: #062737;
+  --desc-color: #6b6e73;
+  --main-bg: #fafafa;
+  --nav-icon: #5471f1;
+  /* Dark */
+  --black-main: #201d2c;
+  --black-secondary: #262636;
+  --black-hover: #3b3a4d;
+  --text-light: #ffffff;
+}
+
+.light-theme {
+  --themeMainBg: var(--main-bg);
+  --themeTextPimary: var(--text-primary);
+  --themeNotesBg: var(--nav-bg);
+  --themeIcon: var(--nav-icon);
+  --themeHover: var(--nav-bg);
+}
+.dark-theme {
+  --themeMainBg: var(--black-main);
+  --themeTextPimary: var(--text-light);
+  --themeNotesBg: var(--black-secondary);
+  --themeIcon: var(--desc-color);
+  --themeHover: var(--black-hover);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  transition: background-color 0.6s ease, color 1s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  color: var(--themeTextPimary);
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--themeMainBg);
+}
+header {
+  width: 100%;
+  background-color: var(--themeNotesBg);
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0 2rem 0 2rem;
+}
+.nav-name {
+  display: none;
+  transition: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  max-width: 375px;
+  margin: 20px;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.title h1 {
+  font-size: 18px;
+}
+.darkmode {
+  width: 46px;
+  height: 46px;
+  background-color: var(--themeNotesBg);
+  position: relative;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.fa-adjust {
+  transform: rotate(180deg);
+}
+.switch input {
+  display: none;
+}
+.switch {
+  cursor: pointer;
+  display: flex;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-notes a {
+  display: flex;
+  margin: 10px 0 10px 0;
+  background-color: var(--themeNotesBg);
+  border-radius: 21px;
+}
+
+.content-notes a:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--themeHover);
+}
+.desc-notes {
+  padding-top: 16px;
+  padding-right: 10px;
+}
+.content-notes img {
+  margin-right: 20px;
+}
+.content-notes h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.content-notes h4 {
+  font-size: 13px;
+  font-weight: lighter;
+}
+footer {
+  background-color: var(--themeNotesBg);
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p a {
+  font-weight: bold;
+}
+i {
+  color: var(--themeTextPimary);
+}
+i:hover,
+i:active,
+i:focus {
+  color: var(--themeIcon);
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    position: fixed;
+    top: 0;
+    height: 90px;
+  }
+
+  main {
+    margin-top: 80px;
+    justify-content: left;
+    margin: 80px;
+  }
+
+  .content {
+    max-width: none;
+    width: 100%;
+  }
+  .title h1 {
+    font-size: 40px;
+  }
+  .notes {
+    align-items: flex-start;
+    justify-content: left;
+  }
+  .icon-notes img {
+    width: 150px;
+    margin-right: 40px;
+  }
+  .content-notes {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .desc-notes {
+    margin-top: 30px;
+  }
+  .desc-notes h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .desc-notes h4 {
+    font-size: 20px;
+  }
+
+  .nav-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--themeTextPimary);
+    padding-bottom: 5px;
+  }
+  .nav-name:hover,
+  .nav-name:active {
+    color: var(--themeIcon);
+    font-weight: bold;
+  }
+  header .fas {
+    display: none;
+  }
+
+  header {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--themeNotesBg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--themeTextPimary);
+    border-radius: 10px;
+  }
+}
